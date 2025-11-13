@@ -1,11 +1,14 @@
 import { App, staticFiles } from "fresh";
 import { define, type State } from "./utils.ts";
 import * as bcrypt from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
+import dotenv from "dotenv";
 
 export const app = new App<State>();
-
+dotenv.config();
 app.use(staticFiles());
 
+const adminmail = Deno.env.get("EMAIL") || "default@default.com";
+const adminpass = Deno.env.get("PASSWORD") || "default";
 app.post("/api/login", async (ctx) => {
   try {
     const formData = await ctx.req.formData();
@@ -18,7 +21,7 @@ app.post("/api/login", async (ctx) => {
         headers: { Location: "/?error=emptyfields" },
       });
     }
-    if (email != "admin@trenfe.com" || password != "trenfeadmin1") {
+    if (email != adminmail || password != adminpass) {
       return new Response(null, {
         status: 302,
         headers: { Location: "/?error=credentials" },
