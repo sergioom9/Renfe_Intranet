@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "esbuild": "^0.27.0",
+    "fdir": "^6.5.0",
+    "picomatch": "^4.0.3",
+    "tinyglobby": "^0.2.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/helper-plugin-utils": "^7.27.1",
+    "@babel/plugin-transform-react-display-name": "^7.28.0",
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/plugin-transform-react-jsx-development": "^7.27.1",
+    "@babel/plugin-transform-react-pure-annotations": "^7.27.1",
+    "@preact/signals-core": "^1.12.1",
+    "@prefresh/babel-plugin": "^0.5.2",
+    "@rollup/pluginutils": "^5.3.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "preact-render-to-string": "^6.6.3",
+    "rollup": "^4.53.2"
+  }
+}
